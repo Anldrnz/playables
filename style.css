@@ -1,0 +1,22 @@
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 256px;
+    height: 456px;
+}
+
+#bgimg {
+   z-index: -1;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 256px;
+   height: 456px;
+ }
+
+#change1 {
+  position: absolute;
+  top: 200;
+  left: 600;
+}

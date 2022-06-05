@@ -4,8 +4,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <img src="" alt="">
+  <div>
+    <img id="bgimg" src="gifs\fashionBattlePlayable_base1_Moment.jpg" alt="">
+    <video autoplay muted loop preload="auto" id="base_vid_1">
+     <source id="vid1_src" src="gifs\fashionBattlePlayable_base1.mp4" type="video/mp4">
+    </video>
+  </div>
+  <button type="button" id="change1">
+    <img src="gifs\purpleJacket.png">
+  </button>
+
+  <script>
+    const bgim = document.getElementById("bgimg");
+    const v1 = document.getElementById("base_vid_1");
+    const s = document.getElementById("vid1_src");
+    function changeVideo1() {
+      var canvas = document.createElement("canvas");
+      canvas.width = v1.videoWidth;
+      canvas.height = v1.videoHeight;
+      var canvasContext = canvas.getContext("2d");
+      canvasContext.drawImage(v1, 0, 0);
+      bgim.src = canvas.toDataURL('image/png')
+      s.src = "gifs/fashionBattlePlayable_base2.mp4";
+      v1.load();
+      v1.play();
+    }
+   document.getElementById("change1").onclick=changeVideo1;
+</script>
 </body>
 </html>
